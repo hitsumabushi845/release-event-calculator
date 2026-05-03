@@ -9,7 +9,11 @@ describe('calculate', () => {
   });
 
   it('returns failure for invalid input', () => {
-    const result = calculate({ ticketUnitPrice: 0, targetTickets: 10, cds: [] });
+    const result = calculate({
+      ticketUnitPrice: 0,
+      targetTickets: 10,
+      cds: [{ id: 'a', name: 'A', price: 1500 }]
+    });
     expect(result).toEqual({ ok: false, reason: 'invalid' });
   });
 
