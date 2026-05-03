@@ -24,10 +24,14 @@ export function computeParetoFront(input: CalculatorInput): ParetoResult {
   const maxPrice = Math.max(...cds.map((c) => c.price));
   const upperBound = remainingTarget + maxPrice - 1;
 
-  const operationsEstimate = cds.reduce((acc, c) => {
-    const cap = c.maxQuantity === undefined ? Math.ceil(upperBound / c.price) : c.maxQuantity - (c.minQuantity ?? 0);
+  const innerOps = cds.reduce((acc, c) => {
+    const cap = c.maxQuantity === undefined
+      ? Math.ceil(upperBound / c.price)
+      : c.maxQuantity - (c.minQuantity ?? 0);
     return acc + (upperBound + 1) * Math.max(0, cap);
   }, 0);
+  const cloneOps = cds.length * cds.length * (upperBound + 1);
+  const operationsEstimate = innerOps + cloneOps;
   if (operationsEstimate > DP_OPERATION_LIMIT) {
     return { ok: false, reason: 'too-large' };
   }
