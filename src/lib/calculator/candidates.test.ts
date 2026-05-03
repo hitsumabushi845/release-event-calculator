@@ -9,6 +9,10 @@ const pt = (totalCost: number, totalCount: number): ParetoPoint => ({
 });
 
 describe('selectCandidates', () => {
+  it('returns empty array for empty front', () => {
+    expect(selectCandidates([], 1000)).toEqual([]);
+  });
+
   it('returns single point when only one Pareto point', () => {
     const result = selectCandidates([pt(10500, 7)], 1000);
     expect(result.length).toBe(1);
