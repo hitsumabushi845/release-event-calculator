@@ -1,0 +1,47 @@
+{
+  "header": {
+    "title": "Release Event Calculator",
+    "share": "Share",
+    "shareCopied": "URL copied to clipboard"
+  },
+  "rule": {
+    "section": "1. Ticket Rule",
+    "unitPrice": "Yen per ticket",
+    "unitPriceSuffix": "JPY",
+    "targetTickets": "Target tickets",
+    "targetTicketsSuffix": "tickets"
+  },
+  "cd": {
+    "section": "2. CDs",
+    "name": "Name",
+    "price": "Price",
+    "priceSuffix": "JPY",
+    "constraints": "Constraints",
+    "minQuantity": "Minimum quantity",
+    "maxQuantity": "Maximum quantity",
+    "remove": "Remove",
+    "add": "+ Add CD",
+    "defaultName": "CD #{n}"
+  },
+  "result": {
+    "section": "3. Results",
+    "empty": "Add a CD to get started",
+    "totalCost": "¥{cost}",
+    "totalCount": "{count} CDs",
+    "tickets": "{tickets} tickets",
+    "labels": {
+      "cheapest": "Cheapest",
+      "fewest": "Fewest CDs",
+      "balanced": "Balanced"
+    },
+    "errors": {
+      "invalid": "Some inputs are invalid",
+      "infeasible": "No purchase combination satisfies the constraints",
+      "tooLarge": "Input is too large to compute"
+    }
+  },
+  "validation": {
+    "positiveInt": "Enter an integer ≥ 1",
+    "maxLessThanMin": "Maximum must be ≥ minimum"
+  }
+}
