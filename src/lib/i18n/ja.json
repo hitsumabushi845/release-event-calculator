@@ -1,0 +1,47 @@
+{
+  "header": {
+    "title": "リリースイベント計算機",
+    "share": "シェア",
+    "shareCopied": "URLをコピーしました"
+  },
+  "rule": {
+    "section": "1. 特典券ルール",
+    "unitPrice": "特典券単価",
+    "unitPriceSuffix": "円ごとに1枚",
+    "targetTickets": "目標枚数",
+    "targetTicketsSuffix": "枚"
+  },
+  "cd": {
+    "section": "2. CD一覧",
+    "name": "名前",
+    "price": "価格",
+    "priceSuffix": "円",
+    "constraints": "制約を設定",
+    "minQuantity": "最低購入数",
+    "maxQuantity": "最大購入数",
+    "remove": "削除",
+    "add": "+ CD追加",
+    "defaultName": "CD #{n}"
+  },
+  "result": {
+    "section": "3. 結果",
+    "empty": "CDを追加してください",
+    "totalCost": "{cost}円",
+    "totalCount": "{count}枚",
+    "tickets": "{tickets}枚獲得",
+    "labels": {
+      "cheapest": "最安",
+      "fewest": "最少枚数",
+      "balanced": "バランス"
+    },
+    "errors": {
+      "invalid": "入力に誤りがあります",
+      "infeasible": "制約を満たす購入が見つかりません",
+      "tooLarge": "入力規模が大きすぎます"
+    }
+  },
+  "validation": {
+    "positiveInt": "1以上の整数を入力してください",
+    "maxLessThanMin": "最大値は最小値以上にしてください"
+  }
+}
