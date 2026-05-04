@@ -46,4 +46,20 @@ describe('url state', () => {
     const wrong = btoa(JSON.stringify({ u: 0, t: 10, c: [] })).replace(/=+$/, '');
     expect(decodeState(wrong)).toBeNull();
   });
+
+  it('round-trips multibyte CD names (Japanese, emoji)', () => {
+    const multibyte: CalculatorInput = {
+      ticketUnitPrice: 1000,
+      targetTickets: 10,
+      cds: [
+        { id: 'a', name: '通常盤', price: 1500 },
+        { id: 'b', name: '初回限定盤A 🎉', price: 2200, minQuantity: 1, maxQuantity: 5 }
+      ]
+    };
+    const encoded = encodeState(multibyte);
+    const decoded = decodeState(encoded);
+    expect(decoded).not.toBeNull();
+    expect(decoded!.cds[0].name).toBe('通常盤');
+    expect(decoded!.cds[1].name).toBe('初回限定盤A 🎉');
+  });
 });
