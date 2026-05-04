@@ -23,7 +23,7 @@
       const restored = decodeState(s);
       if (restored) input.replaceAll(restored);
     }
-    runCalculate();
+    // $effect will handle the initial calculation via debounce
   });
 
   $effect(() => {
@@ -59,12 +59,12 @@
     history.replaceState({}, '', url.toString());
   }
 
-  function handleLangChange(lang: 'ja' | 'en') {
-    localStorage.setItem('lang', lang);
+  function handleLangChange(next: 'ja' | 'en', prev: 'ja' | 'en') {
+    localStorage.setItem('lang', next);
     const url = new URL(window.location.href);
-    url.searchParams.set('lang', lang);
+    url.searchParams.set('lang', next);
     history.replaceState({}, '', url.toString());
-    trackEvent('lang_switch', { to: lang });
+    trackEvent('lang_switch', { from: prev, to: next });
   }
 
   function handleShare() {

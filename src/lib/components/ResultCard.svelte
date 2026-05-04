@@ -19,8 +19,8 @@
     <h3>{$_(labelKey)}</h3>
     <span class="meta">
       {$_('result.totalCost', { values: { cost: fmt.format(solution.totalCost) } })}
-      ／ {$_('result.totalCount', { values: { count: solution.totalCount } })}
-      ／ {$_('result.tickets', { values: { tickets: solution.ticketsObtained } })}
+      ／ {$_('result.totalCount', { values: { count: fmt.format(solution.totalCount) } })}
+      ／ {$_('result.tickets', { values: { tickets: fmt.format(solution.ticketsObtained) } })}
     </span>
   </header>
   <ul>

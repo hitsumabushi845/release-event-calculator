@@ -1,11 +1,12 @@
 <script lang="ts">
   import { locale } from 'svelte-i18n';
 
-  let { onChange }: { onChange: (lang: 'ja' | 'en') => void } = $props();
+  let { onChange }: { onChange: (next: 'ja' | 'en', prev: 'ja' | 'en') => void } = $props();
 
   function set(lang: 'ja' | 'en') {
+    const prev = (($locale ?? 'ja').split('-')[0] as 'ja' | 'en');
     locale.set(lang);
-    onChange(lang);
+    onChange(lang, prev);
   }
 
   const current = $derived(($locale ?? 'ja').split('-')[0]);
