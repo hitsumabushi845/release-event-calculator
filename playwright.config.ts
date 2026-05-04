@@ -7,5 +7,5 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI
   },
   testDir: 'src/tests/e2e',
-  use: { baseURL: 'http://localhost:4173' }
+  use: { baseURL: 'http://localhost:4173', locale: 'ja-JP' }
 });
