@@ -10,7 +10,11 @@
   );
 
   function nameOf(id: string): string {
-    return cds.find((c) => c.id === id)?.name || id;
+    const idx = cds.findIndex((c) => c.id === id);
+    if (idx < 0) return id;
+    const cd = cds[idx];
+    if (cd.name) return cd.name;
+    return $_('cd.defaultName').replace('{n}', String(idx + 1));
   }
 </script>
 
