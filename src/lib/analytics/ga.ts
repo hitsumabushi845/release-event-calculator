@@ -1,4 +1,4 @@
-import { PUBLIC_GA_MEASUREMENT_ID } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 
 declare global {
   interface Window {
@@ -11,10 +11,10 @@ let initialized = false;
 
 export function initGa(): void {
   if (initialized) return;
-  if (!PUBLIC_GA_MEASUREMENT_ID) return;
+  const id = env.PUBLIC_GA_MEASUREMENT_ID;
+  if (!id) return;
   if (typeof window === 'undefined') return;
 
-  const id = PUBLIC_GA_MEASUREMENT_ID;
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
