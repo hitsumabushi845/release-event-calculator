@@ -37,7 +37,20 @@
     "errors": {
       "invalid": "Some inputs are invalid",
       "infeasible": "No purchase combination satisfies the constraints",
-      "tooLarge": "Input is too large to compute"
+      "tooLarge": "Input is too large to compute",
+      "tooLargeCausesTitle": "Possible causes",
+      "tooLargeCauses": {
+        "scale": "Target tickets × ticket unit price is too large",
+        "cheap": "CD prices are too low relative to the target, creating too many purchase combinations",
+        "manyCds": "Too many CD types"
+      },
+      "tooLargeRemediesTitle": "How to avoid",
+      "tooLargeRemedies": {
+        "reduceTarget": "Reduce the target ticket count",
+        "reduceUnit": "Lower the yen-per-ticket value",
+        "fewerCds": "Use fewer CD types",
+        "useConstraints": "Set a maximum quantity per CD via \"Constraints\""
+      }
     }
   },
   "validation": {

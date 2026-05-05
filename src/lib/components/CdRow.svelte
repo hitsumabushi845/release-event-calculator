@@ -98,12 +98,15 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .main input {
+    min-width: 0;
+    box-sizing: border-box;
+  }
   .main input[type='text'] {
     flex: 2;
   }
   .main input[type='number'] {
     flex: 1;
-    min-width: 5rem;
   }
   .toggle {
     background: none;
@@ -122,6 +125,12 @@
     display: flex;
     flex-direction: column;
     font-size: 0.875rem;
+    min-width: 0;
+  }
+  .constraints input {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
   .remove {
     background: none;

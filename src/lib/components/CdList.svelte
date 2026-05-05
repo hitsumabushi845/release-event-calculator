@@ -32,6 +32,7 @@
 <style>
   .cd-list {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 0.25rem;
   }
   .add {
