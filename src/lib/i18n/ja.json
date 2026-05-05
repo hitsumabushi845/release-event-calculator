@@ -37,7 +37,20 @@
     "errors": {
       "invalid": "入力に誤りがあります",
       "infeasible": "制約を満たす購入が見つかりません",
-      "tooLarge": "入力規模が大きすぎます"
+      "tooLarge": "入力規模が大きすぎます",
+      "tooLargeCausesTitle": "考えられる原因",
+      "tooLargeCauses": {
+        "scale": "目標枚数 × 特典券単価 の値が大きすぎる",
+        "cheap": "CDの価格が目標額に対して低く、購入の組み合わせが多すぎる",
+        "manyCds": "CDの種類が多すぎる"
+      },
+      "tooLargeRemediesTitle": "回避方法",
+      "tooLargeRemedies": {
+        "reduceTarget": "目標枚数を減らす",
+        "reduceUnit": "特典券単価を小さくする",
+        "fewerCds": "CDの種類を減らす",
+        "useConstraints": "「制約を設定」で各CDの最大購入数を指定する"
+      }
     }
   },
   "validation": {

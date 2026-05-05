@@ -105,6 +105,23 @@
   <h2>{$_('result.section')}</h2>
   {#if !result.ok && result.reason === 'empty'}
     <p class="empty">{$_('result.empty')}</p>
+  {:else if !result.ok && result.reason === 'too-large'}
+    <p class="err">{$_('result.errors.tooLarge')}</p>
+    <div class="hint">
+      <p class="hint-title">{$_('result.errors.tooLargeCausesTitle')}</p>
+      <ul>
+        <li>{$_('result.errors.tooLargeCauses.scale')}</li>
+        <li>{$_('result.errors.tooLargeCauses.cheap')}</li>
+        <li>{$_('result.errors.tooLargeCauses.manyCds')}</li>
+      </ul>
+      <p class="hint-title">{$_('result.errors.tooLargeRemediesTitle')}</p>
+      <ul>
+        <li>{$_('result.errors.tooLargeRemedies.reduceTarget')}</li>
+        <li>{$_('result.errors.tooLargeRemedies.reduceUnit')}</li>
+        <li>{$_('result.errors.tooLargeRemedies.fewerCds')}</li>
+        <li>{$_('result.errors.tooLargeRemedies.useConstraints')}</li>
+      </ul>
+    </div>
   {:else if errorKey}
     <p class="err">{$_(errorKey)}</p>
   {:else if result.ok}
@@ -140,5 +157,25 @@
   }
   .err {
     color: #b91c1c;
+  }
+  .hint {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: #fef3c7;
+    border-left: 3px solid #d97706;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: #1f2937;
+  }
+  .hint-title {
+    margin: 0;
+    font-weight: 600;
+  }
+  .hint ul {
+    margin: 0.25rem 0 0.5rem;
+    padding-left: 1.25rem;
+  }
+  .hint ul:last-child {
+    margin-bottom: 0;
   }
 </style>
